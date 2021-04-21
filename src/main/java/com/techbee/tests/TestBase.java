@@ -1,4 +1,4 @@
-package com.techbee.base;
+ 	package com.techbee.tests;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +11,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class TestBase {
 
 	public static WebDriver driver = null; 
+	
 	public static void configureDriver(){
 
 		//Initiating driver - Singleton Pattern

@@ -1,9 +1,9 @@
-package com.techbee.base;
+package com.techbee.pages;
 
 public class App {
 
 	public static void main(String[] args) {
-		TestBase.configureDriver();
+		//Configuration.configureDriver();
 		/*
 		 * Header header = new Header();
 		 * 

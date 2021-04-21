@@ -1,4 +1,4 @@
-package com.techbee.base;
+package com.techbee.tests;
 
 public class Constants {
 
