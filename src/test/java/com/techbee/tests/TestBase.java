@@ -2,16 +2,21 @@
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+
 public class TestBase {
 
 	public static WebDriver driver = null; 
 	
+	@BeforeClass
 	public static void configureDriver(){
 
 		//Initiating driver - Singleton Pattern
@@ -48,13 +53,15 @@ public class TestBase {
 		
 	}
 	
-	public void quit() {
+	@AfterClass
+	public static void quit() {
 		System.out.println("Quitting the browser");
 		driver.quit();
 		driver = null;
 	}
 	
-	public void close() {
+	
+	public static void close() {
 		System.out.println("Closing the browser");
 		driver.close();
 		driver = null;

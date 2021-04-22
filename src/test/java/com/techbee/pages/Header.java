@@ -61,11 +61,6 @@ public class Header extends Footer {
 		driver.findElement(By.xpath("//*[@id=\"gh-minicart-hover\"]/div/a[1]")).click();
 	}
 
-	public void searchInputAndClick(String input) throws InterruptedException {
-
-		driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys(input);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
-	}
+	
 
 }
