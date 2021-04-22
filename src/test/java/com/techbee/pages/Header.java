@@ -1,13 +1,38 @@
 package com.techbee.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 public class Header extends Footer {
 
 	WebDriver driver;
+	
+	@FindBy(how = How.XPATH, using = "//img[@id='gh-logo']")
+	WebElement ebayLogo;
+	@FindBy(how = How.LINK_TEXT, using = "Sign In")
+	WebElement signInLink;
+	@FindBy(how = How.LINK_TEXT, using = "Register")
+	WebElement registerLink;
+	@FindBy(how = How.LINK_TEXT, using = "Daily Deals")
+	WebElement dailyDealsLink;
+	@FindBy(how = How.LINK_TEXT, using = "Brand Outlet")
+	WebElement brandOutletLink;
+	@FindBy(how = How.LINK_TEXT, using = "Help & Contact")
+	WebElement helpAndContactLink;
+	@FindBy(how = How.LINK_TEXT, using = "Sell")
+	WebElement sellLink;
+	@FindBy(how = How.LINK_TEXT, using = "Watchlist")
+	WebElement watchlistDropdown;
+	@FindBy(how = How.LINK_TEXT, using = "My eBay")
+	WebElement myEbayDropdown;
+	@FindBy(how = How.XPATH, using = "//i[@id='gh-Alerts-i']")
+	WebElement notifiactionBellLink;
+	@FindBy(how = How.XPATH, using = "//*[@id=\'gh-minicart-hover\']/div/a[1]/svg")
+	WebElement shoppingCartLink;
+	
 
 	public Header(WebDriver driver) {
 		super(driver);
@@ -15,50 +40,49 @@ public class Header extends Footer {
 	}
 
 	public void homeLogoClick() {
-		driver.findElement(By.xpath("//img[@id='gh-logo']")).click();
+		ebayLogo.click();
 	}
 
 	public void signInClick() {
-		// click on sign in
-		driver.findElement(By.linkText("Sign in")).click();
+		signInLink.click();
 	}
 
 	public void registerClick() {
-		driver.findElement(By.linkText("Register")).click();
+		registerLink.click();
 	}
 
 	public void dailyDealsClick() {
-		driver.findElement(By.linkText("Daily Deals")).click();
+		dailyDealsLink.click();
 	}
 
 	public void brandOutletClick() {
-		driver.findElement(By.linkText(" Brand Outlet")).click();
+		brandOutletLink.click();
 	}
 
 	public void helpAndContactClick() {
-		driver.findElement(By.linkText("Help & Contact")).click();
+		helpAndContactLink.click();
 	}
 
 	public void Sell() {
-		driver.findElement(By.linkText("Sell")).click();
+		sellLink.click();
 	}
 
 	public void watchListClick() {
-		driver.findElement(By.linkText("Watchlist")).click();
+		watchlistDropdown.click();
 	}
 
-	public void MyEbayHover() {
+	public void MyEbayLinkHover() {
 		Actions action = new Actions(driver);
-		WebElement we = driver.findElement(By.id("gh-eb-My"));
+		WebElement we = myEbayDropdown;
 		action.moveToElement(we).perform();
 	}
 
 	public void MyEbayClick() {
-		driver.findElement(By.linkText("My eBay")).click();
+		myEbayDropdown.click();
 	}
 
 	public void notificationBellClick() {
-		driver.findElement(By.xpath("//*[@id=\"gh-minicart-hover\"]/div/a[1]")).click();
+		notifiactionBellLink.click();
 	}
 
 	
