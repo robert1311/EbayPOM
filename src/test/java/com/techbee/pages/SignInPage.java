@@ -11,8 +11,8 @@ public class SignInPage {
 	
 	@FindBy(how=How.XPATH, using = "//span[@id='signin-reg-msg']")
 	WebElement signInMessage;
-	@FindBy(how = How.XPATH, using = "//img[@id='gh-logo']")
-	WebElement ebayLogo;
+	@FindBy(how = How.XPATH, using = "//a[@id='gh-la']")
+	WebElement ebayLogoButton;
 	@FindBy(how=How.XPATH, using="//input[@id='userid']") 
 	WebElement signInUsernameInput;
 	@FindBy(how=How.XPATH, using="//button[@id='signin-continue-btn']") 
@@ -21,53 +21,60 @@ public class SignInPage {
 	WebElement signInPasswordInput;
 	@FindBy(how=How.XPATH, using="//button[@id='sgnBt']") 
 	WebElement signInButton;
+	@FindBy(how=How.XPATH, using="//span[@id='user-info']")
+	WebElement welcomeUsername;
+	@FindBy(how=How.XPATH, using="//button[@id='signin_ggl_btn']")
+	WebElement googleSignInButton;
+	@FindBy(how=How.XPATH, using="//button[@id='signin_fb_btn']")
+	WebElement facebookSignInButton;
+	@FindBy(how=How.XPATH, using="//button[@id='signin_appl_btn']")
+	WebElement appleSignInButton;
+	
+	public SignInPage(WebDriver driver) {
+		this.driver = driver;
+	}
 
 	public String signInMessageText() {
 		return signInMessage.getText();
 	}
 	
 	public void ebayLogoClick() {
-		
+		ebayLogoButton.click();
 	}
 	
 	public void createAnAccount() {
 		
 	}
 	
-	public void enterUsernameInput() {
-		
-	}
-	
-	public void continueButtonClick() {
-		
-	}
+	/*
+	 * public String enterUsernameInput(String username) { return username;
+	 * 
+	 * }
+	 */
 	
 	public void continueWithFacebookClick() {
-		
+		facebookSignInButton.click();
 	}
 	
 	public void continuewithGoogleClick() {
-		
+		googleSignInButton.click();
 	}
 	
 	public void continueWithAppleClick() {
-		
+		appleSignInButton.click();
 	}
 	
-	public void staySignedInClick() {
-		
-	}
-	
-	public void learnMoreLinkClick() {
-		
-	}
-	
-	public void signInEnterUsername(String setUsername) {
+	public String signInEnterUsername(String setUsername) {
 		signInUsernameInput.sendKeys(setUsername);
+		return setUsername;
 	}
 	
 	public void continueToPasswordButtonClick() {
 		continueToPasswordButton.click();
+	}
+	
+	public String usernameEntered() {
+		return welcomeUsername.getText();
 	}
 	
 	public void signInEnterPassword(String setPassword) {
