@@ -12,9 +12,9 @@ public class Header extends Footer {
 	
 	@FindBy(how = How.XPATH, using = "//img[@id='gh-logo']")
 	WebElement ebayLogo;
-	@FindBy(how = How.LINK_TEXT, using = "Sign In")
+	@FindBy(how = How.LINK_TEXT, using = "Sign in")
 	WebElement signInLink;
-	@FindBy(how = How.LINK_TEXT, using = "Register")
+	@FindBy(how = How.LINK_TEXT, using = "register")
 	WebElement registerLink;
 	@FindBy(how = How.LINK_TEXT, using = "Daily Deals")
 	WebElement dailyDealsLink;
@@ -32,6 +32,7 @@ public class Header extends Footer {
 	WebElement notifiactionBellLink;
 	@FindBy(how = How.XPATH, using = "//*[@id=\'gh-minicart-hover\']/div/a[1]/svg")
 	WebElement shoppingCartLink;
+	
 	
 
 	public Header(WebDriver driver) {
