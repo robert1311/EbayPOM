@@ -103,8 +103,6 @@ public class EbaySignInAndRegisterTest extends TestBase {
 		Assert.assertTrue(URL.contains(appleIDPartialURL));
 		driver.navigate().back();
 		Thread.sleep(3000);
-		
-		
 	}
 
 	@Test
@@ -121,8 +119,6 @@ public class EbaySignInAndRegisterTest extends TestBase {
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("asdf234");
 		String errorMessage = driver.findElement(By.xpath("//div[@id='Email_err']")).getText();
 		assertEquals("Email address is invalid. Please enter a valid email address.", errorMessage);
-		
-		
 	}
 	
 	
