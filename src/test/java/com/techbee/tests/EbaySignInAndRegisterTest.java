@@ -116,10 +116,14 @@ public class EbaySignInAndRegisterTest extends TestBase {
 		System.out.println(create);
 		Assert.assertEquals("Create an account", create);
 		
+		
+		driver.findElement(By.xpath("//input[@id='Email']")).sendKeys("abc123");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("asdf234");
+		String errorMessage = driver.findElement(By.xpath("//div[@id='Email_err']")).getText();
+		assertEquals("Email address is invalid. Please enter a valid email address.", errorMessage);
+		
+		
 	}
 	
-	//@Test
-	public void continueWithExternalAccountsTest() {
 	
-	}
 }
